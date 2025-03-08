@@ -16,6 +16,7 @@ namespace Infrastructure.Extensions
         {
             services.AddScoped<IUserInterfaces, UserRepository>();
             services.AddScoped<UserServices>();
+            services.AddScoped<ExchangeRateService>();
             return services;
         }
     }

@@ -4,6 +4,7 @@ using Infrastructure.Extensions;
 using System;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
+using Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,7 +32,7 @@ builder.Services.AddAuthentication(options =>
 });
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddHttpClient<ExchangeRateService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

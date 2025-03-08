@@ -1,0 +1,11 @@
+D:\ABC\MoneyTransfer\Core\bin\Debug\net8.0\Core.deps.json
+D:\ABC\MoneyTransfer\Core\bin\Debug\net8.0\Core.dll
+D:\ABC\MoneyTransfer\Core\bin\Debug\net8.0\Core.pdb
+D:\ABC\MoneyTransfer\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\ABC\MoneyTransfer\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+D:\ABC\MoneyTransfer\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+D:\ABC\MoneyTransfer\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\ABC\MoneyTransfer\Core\obj\Debug\net8.0\Core.dll
+D:\ABC\MoneyTransfer\Core\obj\Debug\net8.0\refint\Core.dll
+D:\ABC\MoneyTransfer\Core\obj\Debug\net8.0\Core.pdb
+D:\ABC\MoneyTransfer\Core\obj\Debug\net8.0\ref\Core.dll

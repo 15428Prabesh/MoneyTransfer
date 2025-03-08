@@ -15,8 +15,10 @@ namespace Infrastructure.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IUserInterfaces, UserRepository>();
+            services.AddScoped<IMoneyTransferInterfaces, MoneyTransferRepository>();
             services.AddScoped<UserServices>();
             services.AddScoped<ExchangeRateService>();
+            services.AddScoped<MoneyTransferServices>();
             return services;
         }
     }

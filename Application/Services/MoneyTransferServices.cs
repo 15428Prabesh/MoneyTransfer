@@ -20,7 +20,18 @@ namespace Application.Services
         }
         public async Task<bool> TransferMoneyAsync(string BankName, string AccountNumber, string receiverFirstName, string receiverMiddleName, string receiverLastName, string receiverAddress, string receiverCountry, decimal transferAmountMYR, decimal exchangeRate, decimal payoutAmountNPR)
         {
-            return true;
+            try
+            {
+                if (transferAmountMYR <= 0 || exchangeRate <= 0)
+                    throw new InvalidOperationException("Invalid transfer details.");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            
         }
         public async Task StoreTransactionDetails(MoneyTransferDto dto)
         {

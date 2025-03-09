@@ -23,6 +23,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         options.LoginPath = "/Auth/Login";
         options.AccessDeniedPath = "/Home/AccessDenied";
+        options.LogoutPath = "/Auth/Logout";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60); 
+        options.SlidingExpiration = true;  
     });
 
 builder.Services.AddAuthentication(options =>

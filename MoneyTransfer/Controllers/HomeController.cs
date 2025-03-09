@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MoneyTransfer.Models;
 using System.Diagnostics;
 
@@ -22,6 +23,7 @@ namespace MoneyTransfer.Controllers
         {
             return View();
         }
+        [Authorize]
         public IActionResult Dashboard()
         {
             return View();

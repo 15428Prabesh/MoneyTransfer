@@ -32,7 +32,14 @@ namespace MoneyTransfer.Controllers
             return View(dto);
         }
         [HttpGet]
-        public IActionResult Login() => View();
+        public IActionResult Login(string returnUrl = null) {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Dashboard", "Home");
+            }
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        } 
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto dto)
@@ -57,7 +64,7 @@ namespace MoneyTransfer.Controllers
                     var authProperties = new AuthenticationProperties
                     {
                         IsPersistent = false,
-                        ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30)
+                        ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(60)
                     };
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
@@ -75,6 +82,11 @@ namespace MoneyTransfer.Controllers
                 ModelState.AddModelError(string.Empty, $"An error occurred while logging in: {ex.Message}");
             }
             return View(dto);
+        }
+
+        public async Task<IActionResult> Logout() {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index","Home");
         }
     }
 }

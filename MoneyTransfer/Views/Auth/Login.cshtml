@@ -1,6 +1,6 @@
 ﻿<h2>Log In</h2>
 
-<form method="post">
+<form asp-action="Login" method="post">
     <div class="form-group">
         <label for="username">Username</label>
         <input type="text" name="username" id="username" class="form-control" />
@@ -10,6 +10,8 @@
         <label for="password">Password</label>
         <input type="password" name="password" id="password" class="form-control" />
     </div>
+
+    <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
 
     <button type="submit" class="btn btn-primary">Log In</button>
 </form>
